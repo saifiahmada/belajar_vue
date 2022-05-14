@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Latihan v-for</title>
+</head>
+<body>
+
+	<div id="root">
+
+		Nama : <input type="text" v-model="nama">
+		<br><br>
+		
+		<button @click="tambah">Tambah Data</button>
+		<br><br>
+
+		<ul>
+			<li v-for="n in namas">{{ n }}</li>
+		</ul>
+		
+
+	</div>
+
+	<script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+
+	<script>
+		var ap = new Vue({
+			el: '#root',
+			data: {
+				mahasiswa: {nama, alamat},
+				mahasiswas: []
+
+			},
+
+			methods: {
+				tambah() {
+					this.namas.push(this.nama);
+					this.nama = '';
+				}
+			}
+		});
+	</script>
+
+
+</body>
+</html>
