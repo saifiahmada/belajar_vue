@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Class Binding</title>
+	<style type="text/css">
+		.color-merah { color: red;  }
+		.color-hijau { color: green;  }
+	</style>
+</head>
+<body>
+
+	<div id="root">
+		<h1 :class="className">Hello Vue: Class Binding</h1>
+		<button @click="ubah">Ubah Class</button>
+	</div>
+
+	<script src="vue.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#root',
+			data: {
+				className: 'color-merah'
+			},
+			methods: {
+				ubah() {
+					if( this.className == 'color-merah' ){
+						this.className = 'color-hijau';
+						
+					} else {
+						this.className = 'color-merah';
+					}
+				}
+			}
+
+		});	
+	</script>
+
+	
+</body>
+</html>

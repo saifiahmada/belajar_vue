@@ -2,8 +2,47 @@
 <html>
 <head>
 	<title>Attribute Binding</title>
+
 </head>
 <body>
 	
+	<div id="root">
+
+		<input type="text" :value="value">
+		<hr>
+		<br><br>
+		<button title="title">button title=title dari button</button>
+		<br>
+		<br>
+		<hr>
+		<button v-bind:title="title">button title dari js</button>
+		<hr>
+		<input :type="type" value="password">
+		<button @click="ubah">Ubah Type Input</button>
+
+
+	</div>
+
+	<script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+
+	<script>
+		var app = new Vue({
+			el: '#root',
+			data: {
+				title: 'title dari javascript',
+				value:'value dari javascript',
+				type: 'text'
+			},
+			methods: {
+				ubah() {
+					if (this.type == 'text'){
+						this.type = 'password';
+					} else {
+						this.type = 'text';	
+					}
+				}
+			}
+		});
+	</script>
 </body>
 </html>
